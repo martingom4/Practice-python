@@ -13,7 +13,6 @@ def main():
             match value:
                 case 1:
                     print("Crear tablero")
-                    # No es necesario usar una variable Botin aquí, ya está en self.botin
                     for row in size.botin:
                         print(row)
                 case 2:
@@ -21,7 +20,7 @@ def main():
                     activo = False
                 case 3:
                     print("Cambiar valor de ejemplo")
-                    size.change_example()  # Llamamos al método para cambiar el valor y mostrar el tablero
+                    size.change_example()
                 case _:
                     print("Opción no válida")
         except ValueError:
