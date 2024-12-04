@@ -1,5 +1,6 @@
 from models.tarea import Tarea
 import json # Importamos la librería json para poder guardar y cargar los datos en un archivo json
+# Creamos la clase gestorTarea
 class gestorTarea:
     def __init__(self):
         self.tareas= []

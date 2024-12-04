@@ -1,3 +1,4 @@
+# esta es la clase tarea en la que definimos los atributos de la tarea y metodo de impresion 
 class Tarea:
     contador = 0
     def __init__(self, titulo, descripcion):
