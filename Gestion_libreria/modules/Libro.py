@@ -3,15 +3,17 @@ Clase: Libro
 + titulo: str
 + autor: str
 + codigo: str
-+ disponible: bool
-+ cambiar_disponibilidad()
++ disponible: bool ya
++ cambiar_disponibilidad() ya
 """
 
 class libro:
-    def __init__(self, titulo, autor, codigo, disponible =True):
+    codigo = 1
+    def __init__(self, titulo, autor, disponible =True):
       self.titulo = titulo
       self.autor = autor
-      self.codigo = codigo
+      libro.codigo =+ 1
+      self.codigo = libro.codigo
       self.disponible = disponible
 
     def __str__(self):
