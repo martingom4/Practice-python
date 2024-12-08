@@ -1,54 +1,28 @@
-class Libro:
-    def __init__(self, titulo, autor, isbn, precio, cantidad):
-        self.__titulo = titulo
-        self.__autor = autor
-        self.__isbn = isbn
-        self.__precio = precio
-        self.__cantidad = cantidad
+from modules.Biblioteca import biblioteca
 
-    @property
-    def precio(self):
-        return self.__precio
+biblioteca = biblioteca()#instanciamos la clase biblioteca para poder usar sus metodos
 
-    @precio.setter
-    def precio(self, valor):
-        if valor > 0:
-            self.__precio = valor
-        else:
-            print("El precio debe ser mayor a 0")
+def main():
+    print("Bienvenido a la gestion de tu libreria \n")
+    print("que deseas hacer?\n")
+    valor =int(input("1. Agregar un libro\n2. Registra un usuario\n3. Devolver un libro\n4. Buscar un libro\n5. Listar libros disponibles\n6. Listar libros prestados\n7. Salir\n"))
+    match valor:
+        case 1:
+            titulo = input("ingrese el titulo del libro: ")
+            autor = input("ingrese el autor del libro: ")
+            codigo = input("ingrese el codigo del libro: ")
+            biblioteca.agregar_libro(titulo, autor, codigo)
+        case 2:
+            nombre = input("ingrese el nombre del usuario: ")
+            biblioteca.registrar_usuario(nombre)
+        case _:
+            print("opcion no valida")
 
-    def vender(self, cantidad):
-        if self.__cantidad >= cantidad:
-            self.__cantidad -= cantidad
-            return self.__precio * cantidad
-        else:
-            print("No hay suficiente stock")
-            return 0
 
-class LibroFisico(Libro):
-    def __init__(self, titulo, autor, isbn, precio, cantidad, peso, tamaño):
-        super().__init__(titulo, autor, isbn, precio, cantidad)
-        self.peso = peso
-        self.tamaño = tamaño
 
-    def detalles(self):
-        return f"{self.__titulo} de {self.__autor} - {self.peso}kg, {self.tamaño}cm"
 
-class Cliente:
-    def __init__(self, nombre, direccion):
-        self.nombre = nombre
-        self.direccion = direccion
-        self.libros_comprados = []
 
-    def comprar_libro(self, libro, cantidad):
-        precio_total = libro.vender(cantidad)
-        if precio_total > 0:
-            self.libros_comprados.append((libro, cantidad))
-            return precio_total
-        return 0
+if __name__ == "__main__":
+    main()
 
-# Uso
-libro1 = LibroFisico("Python para Todos", "Juan Pérez", "123456", -30.0,10,0.5, 21)
-cliente1 = Cliente("Carlos", "Av. Siempre Viva 123")
-precio = cliente1.comprar_libro(libro1, 2)
-print(f"Precio total: {precio}")
+
