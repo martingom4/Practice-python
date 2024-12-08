@@ -38,6 +38,8 @@ class usuario:
                 print("Libro no encontrado")
 
     def ver_historial(self):
-        for prestamo in self.historial_prestamos:
-            print(prestamo)
+        #aca debo de recorrer la lista de historial de prestamos y mostrarla
+        print(f"Historial de prestamos de {self.nombre}")
+        for libto in self.historial_prestamos:
+            print(libto)
 

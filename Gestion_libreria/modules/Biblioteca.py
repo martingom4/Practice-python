@@ -20,7 +20,11 @@ class biblioteca:
 
     def agregar_libro(self, titulo, autor, codigo): #metodo para agregar un libro al catalogo
         agregar = libro(titulo, autor,codigo, True)
-        self.catalogo_libros.append(agregar)
+        if codigo in [libro.codigo for libro in self.catalogo_libros]:
+            print("El libro ya existe")
+        else:
+            print("Libro agregado correctamente al catalogo")
+            self.catalogo_libros.append(agregar)
 
     def registrar_usuario(self, nombre):
         agregar = usuario(nombre)
@@ -59,9 +63,10 @@ class biblioteca:
             print(usuario)
 
     def buscar_libro(self,codigo):
-        for libro in self.caltalogo_libros:
+        for libro in self.catalogo_libros:
             if libro.codigo == codigo:
                 print(libro)
+
             else:
                 print("Libro no encontrado")
 
@@ -78,4 +83,4 @@ class biblioteca:
     def historial_prestamos(self):
         #aca debemos recorrer la lista de usuarios y mostrar el historial de prestamos de cada uno
         for usuario in self.usuarios:
-            usuario.ver_historial() # debe de devolver el historial de prestamos de cada usuario
+            {usuario.ver_historial()} # debe de devolver el historial de prestamos de cada usuario
