@@ -2,10 +2,10 @@
 Clase: Biblioteca
 + catalogo_libros: list[Libro]
 + usuarios: list[Usuario]
-+ agregar_libro()
-+ registrar_usuario()
-+ prestar_libro()
-+ devolver_libro()
++ agregar_libro()ya
++ registrar_usuario()ya
++ prestar_libro()ya
++ devolver_libro()ya
 + buscar_libro()ya
 + listar_libros_disponibles() ya
 + listar_libros_prestados() ya
@@ -18,8 +18,8 @@ class biblioteca:
         self.catalogo_libros = [] # aca vamos a trear los libros que se definieron en la clase libro
         self.usuarios = [] # aca vamos a trear los usuarios que se definieron en la clase usuario
 
-    def agregar_libro(self, titulo, autor): #metodo para agregar un libro al catalogo
-        agregar = libro(titulo, autor, True)
+    def agregar_libro(self, titulo, autor, codigo): #metodo para agregar un libro al catalogo
+        agregar = libro(titulo, autor,codigo, True)
         self.catalogo_libros.append(agregar)
 
     def registrar_usuario(self, nombre):
@@ -74,3 +74,6 @@ class biblioteca:
         for libro in self.catalogo_libros:
             if not libro.disponible:
                 print(libro)
+
+    def historial_prestamos(self):
+        usuario.ver_historial()

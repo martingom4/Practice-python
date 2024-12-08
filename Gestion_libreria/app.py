@@ -8,7 +8,7 @@ def main():
 
     while mantener:
         print("que deseas hacer?\n")
-        valor =int(input("1. Agregar un libro\n2. Registra un usuario\n3. prestar libro\n4. Buscar un libro\n5. Listar libros disponibles\n6. Listar usuario\n7. devolver libro\n8. Salir\n"))
+        valor =int(input("1. Agregar un libro\n2. Registra un usuario\n3. prestar libro\n4. Buscar un libro\n5. Listar libros disponibles\n6. Listar usuario\n7. devolver libro\n8. ver historial de prestamo\n 9. Salir\n"))
         match valor:
             case 1:
                 titulo = input("ingrese el titulo del libro: ")
@@ -34,7 +34,9 @@ def main():
                 codigo = input("ingrese el codigo del libro: ")
                 inventario.devolver_libro(id_usuario, codigo)
             case 8:
-                print("gracias por preferirnos")
+                inventario.historial_prestamos()
+            case 9:
+                print("Gracias por usar la aplicacion")
                 mantener = False
             case _:
                 print("opcion no valida")

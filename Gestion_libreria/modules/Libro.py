@@ -8,12 +8,11 @@ Clase: Libro
 """
 
 class libro:
-    codigo = 1
-    def __init__(self, titulo, autor, disponible =True):
+
+    def __init__(self, titulo, autor, codigo, disponible=True):
       self.titulo = titulo
       self.autor = autor
-      libro.codigo =+ 1
-      self.codigo = libro.codigo
+      self.codigo = codigo
       self.disponible = disponible
 
     def __str__(self):
@@ -21,6 +20,7 @@ class libro:
 
     def change_disponible(self):
         self.disponible = not self.disponible
+
 
 
 
