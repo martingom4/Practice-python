@@ -76,4 +76,6 @@ class biblioteca:
                 print(libro)
 
     def historial_prestamos(self):
-        usuario.ver_historial()
+        #aca debemos recorrer la lista de usuarios y mostrar el historial de prestamos de cada uno
+        for usuario in self.usuarios:
+            usuario.ver_historial() # debe de devolver el historial de prestamos de cada usuario
