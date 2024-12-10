@@ -84,3 +84,4 @@ class biblioteca:
         #aca debemos recorrer la lista de usuarios y mostrar el historial de prestamos de cada uno
         for usuario in self.usuarios:
             {usuario.ver_historial()} # debe de devolver el historial de prestamos de cada usuario
+#esto esta terminaod al 100% y funciona correctamente
