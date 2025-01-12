@@ -1,18 +1,24 @@
 from flask import Blueprint, jsonify, request
-from Paqueteria.crud import crear_paquete, listar_paquetes, actualizar_estado_paquete, eliminar_paquete
-from Paqueteria.factories import PaqueteFactory
-from Paqueteria.builders import PaqueteBuilder
+from Paqueteria.crud import crear_paquete, actualizar_estado_paquete, eliminar_paquete,listar_paquetes
+
 
 paquete_bp = Blueprint("paquetes", __name__)
+@paquete_bp.route("/listar", methods=["GET"])
+def listar():
+    '''listar todos los paquetes'''
+    paquetes = listar_paquetes()
+    paquetes = [{"id": paquete.id, "descripcion": paquete.description, "peso": paquete.peso, "estado": paquete.estado} for paquete in paquetes]
+    return jsonify(paquetes)
 
-@paquete_bp.route("/", methods=["POST"])
+
+@paquete_bp.route("/crear", methods=["POST"])
 def crear():
     '''crear un nuevo paquete'''
     data = request.json # se obtiene la informacion del paquete
     paquete = crear_paquete(data['descripcion'], data['peso'])
     return jsonify({"id": paquete.id, "descripcion": paquete.description, "peso": paquete.peso, "estado": paquete.estado})
 
-@paquete_bp.route("/<int:id_paquete>", methods=["PUT"])
+@paquete_bp.route("/actualizar/<int:id_paquete>", methods=["PUT"])
 def actualizar(paquete_id):
     '''actualizar el estado de un paquete'''
     data = request.json

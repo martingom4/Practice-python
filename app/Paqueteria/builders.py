@@ -15,4 +15,4 @@ class PaqueteBuilder:
         return self
 
     def build(self):
-        return self.paquete # se retorna el paquete que ya esta construido y listo para ser usado
+        return self.paquete # se retorna el paquete que ya esta construido

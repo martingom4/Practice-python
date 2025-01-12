@@ -20,4 +20,5 @@ class Database:
         self.db.init_app(app)  # Conecta SQLAlchemy con la app Flask
 
 # Instancia global del Singleton
-db = Database()
+db_instance = Database()
+db = db_instance.db

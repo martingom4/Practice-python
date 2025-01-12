@@ -12,4 +12,4 @@ class paquete(db.Model):
         return f"<paquete(id={self.id}, description='{self.description}', peso={self.peso}, estado='{self.estado}')>"
 
 
-    
+
