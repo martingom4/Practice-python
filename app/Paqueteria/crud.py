@@ -11,7 +11,7 @@ def crear_paquete(descripcion, peso,estado='pendiente'):
 
 #listar paquetes
 def listar_paquetes():
-    return paquete.query.all()
+    return paquete.query.all() # esto tiene formato json? si, porque se esta retornando un objeto de la base de datos
 
 #actualizar estado de un paquete
 

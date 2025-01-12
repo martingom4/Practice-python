@@ -3,12 +3,12 @@ from Paqueteria.crud import crear_paquete, actualizar_estado_paquete, eliminar_p
 
 
 paquete_bp = Blueprint("paquetes", __name__)
-@paquete_bp.route("/listar", methods=["GET"])
+@paquete_bp.route("/", methods=["GET"])
 def listar():
     '''listar todos los paquetes'''
     paquetes = listar_paquetes()
     paquetes = [{"id": paquete.id, "descripcion": paquete.description, "peso": paquete.peso, "estado": paquete.estado} for paquete in paquetes]
-    return jsonify(paquetes)
+    return jsonify(paquetes),200
 
 
 @paquete_bp.route("/crear", methods=["POST"])
