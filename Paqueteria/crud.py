@@ -1,5 +1,6 @@
 from Paqueteria.database import db
 from Paqueteria.models import paquete
+#piensa que todo esto es para la base de datos y para la tabla paquete que se va a crear en la base de datos nada mas que eso
 
 # se crea un nuevo paquete que se hara en la base de datos
 def crear_paquete(descripcion, peso,estado='pendiente'):
@@ -25,7 +26,7 @@ def actualizar_estado_paquete(id_paquete,nuevo_estado):
 #eliminar paquete
 def eliminar_paquete(id_paquete):
     paquete = paquete.query.get(id_paquete)
-    if paquete:# si el paquete existe en la base de datos se elimina el paquete 
+    if paquete:# si el paquete existe en la base de datos se elimina el paquete
         db.session.delete(paquete)
         db.session.commit()
         return paquete
