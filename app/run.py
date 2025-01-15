@@ -2,7 +2,7 @@ from Paqueteria import create_app
 from flask import Flask
 from flask_cors import CORS
 from Paqueteria.routes import paquete_bp
-from Paqueteria.database import db_instance
+from app.Paqueteria._database import db_instance
 
 app = Flask(__name__)
 CORS(app)  # Configura CORS globalmente para todas las rutas

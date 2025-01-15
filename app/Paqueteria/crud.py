@@ -1,4 +1,4 @@
-from Paqueteria.database import db
+from app.Paqueteria._database import db
 from Paqueteria.models import paquete
 #piensa que todo esto es para la base de datos y para la tabla paquete que se va a crear en la base de datos nada mas que eso
 

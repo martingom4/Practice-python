@@ -1,4 +1,4 @@
-from Paqueteria.database import db
+from app.Paqueteria._database import db
 
 class paquete(db.Model):
     __tablename__ = "paquetes"
