@@ -1,10 +1,9 @@
 from flask import Flask
-from app.Paqueteria._database import db_instance
-from Paqueteria.models import paquete # hay que importar el modelo de la tabla paquete para que se cree en la base de datos
+from ._database import db_instance
+from .models import Paquete # hay que importar el modelo de la tabla paquete para que se cree en la base de datos
 
 def create_app():
     '''Se encarga de crear e inicializar la aplicación Flask'''
-
     app = Flask(__name__)  # Instancia de Flask
 
     # Configuración de la base de datos

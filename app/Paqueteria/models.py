@@ -1,6 +1,6 @@
-from app.Paqueteria._database import db
+from ._database import db
 
-class paquete(db.Model):
+class Paquete(db.Model):
     __tablename__ = "paquetes"
 
     id = db.Column(db.Integer, primary_key=True,)
@@ -9,7 +9,7 @@ class paquete(db.Model):
     estado = db.Column(db.String, default='Pendiente')
 
     def __repr__(self):
-        return f"<paquete(id={self.id}, description='{self.description}', peso={self.peso}, estado='{self.estado}')>"
+        return f"<Paquete(id={self.id}, description='{self.description}', peso={self.peso}, estado='{self.estado}')>"
 
 
 

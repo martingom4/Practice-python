@@ -11,13 +11,14 @@ class Database:
 
     def _initialize(self):
         self.db = SQLAlchemy()
-        self.is_initialized = True #para que solo se inicialice una ves y el self.is_initialized significa que ya se inicializo
+        self.is_initialized = False # Inicialmente no está inicializado
 
     def init_app(self, app):
         """Vincula la aplicación Flask con la base de datos."""
-        if not self.is_initialized:
+        if self.is_initialized:
             raise RuntimeError("La base de datos ya fue inicializada.")
         self.db.init_app(app)  # Conecta SQLAlchemy con la app Flask
+        self.is_initialized = True # Ahora está inicializado
 
 # Instancia global del Singleton
 db_instance = Database()

@@ -18,12 +18,12 @@ def crear():
     paquete = crear_paquete(data['descripcion'], data['peso'])
     return jsonify({"id": paquete.id, "descripcion": paquete.description, "peso": paquete.peso, "estado": paquete.estado})
 
-@paquete_bp.route("/actualizar/<int:id_paquete>", methods=["PUT"])
+@paquete_bp.route("/actualizar/<int:paquete_id>", methods=["PUT"])
 def actualizar(paquete_id):
     '''actualizar el estado de un paquete'''
     data = request.json
     paquete = actualizar_estado_paquete(paquete_id, data['estado']) # se actualiza el estado del paquete con el id dado por el usuario
-    if paquete:# si este id existe se devuelve el paquete con el nuevo estado
+    if paquete: # si este id existe se devuelve el paquete con el nuevo estado
         return jsonify({"id": paquete.id, "descripcion": paquete.description, "peso": paquete.peso, "estado": paquete.estado})
     return jsonify({"error": "Paquete no encontrado"}), 404 # si no se encuentra el paquete se devuelve un error 404
 
