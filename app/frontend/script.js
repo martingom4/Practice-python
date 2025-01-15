@@ -1,5 +1,5 @@
 // URL de la API
-const API_URL = "http://127.0.0.1:5000/api/products";
+const API_URL = "http://127.0.0.1:5000/api/paquetes/";
 
 // Elemento donde se mostrarán los productos
 const productList = document.getElementById("product-list");
