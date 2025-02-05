@@ -14,8 +14,14 @@ def find_sum(nums:int, target:int) -> list:
                 return[i,j]
     return None
 
+def find_sum_diccionary(nums, target):
+    seen = {}#diccionario para guardar el numero e indice
+    for index, value in enumerate(nums):
+        missing = target - value
+        if missing in seen:return [seen[missing],index]
+        seen[value]= index  # esto es para guardar los valores vistos en el diccionario para que se pueda guardar y verificar
+    return None
 
 nums = [4,5,6,2]
-goal = 8
-
-print(find_sum(nums,goal))
+target = 8
+print(find_sum_diccionary(nums, target))
