@@ -8,7 +8,8 @@ class Agregar:
     def addTask(self):
         name = input("Ingrese el nombre de la tarea: ")
         description = input("Ingrese la descripcion de la tarea: ")
-        id = len(self.task_manager.get_tasks()) + 1
+        id = len(self.task_manager.getTask()) + 1  # Generar ID automáticamente
         task = Task(name, description, "Pendiente", id)
-        self.task_manager.add_task(task)
+        self.task_manager.addTask(task)
         print("Tarea agregada con exito")
+        
