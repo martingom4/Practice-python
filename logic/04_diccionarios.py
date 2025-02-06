@@ -17,6 +17,8 @@ persona = {
   }
 }
 
+
+
 # para acceder a los valores
 print(persona["nombre"])
 print(persona["calificaciones"][2])
