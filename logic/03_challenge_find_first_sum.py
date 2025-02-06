@@ -1,10 +1,12 @@
 """
-    dado un array de numeros y un numero objetivo, encontrar los indices de los dos numeros que suman el numero objetivo
-    y devuelve sus indices. Si no existe tal combinacion, devuelve None
+Dado un array de números y un número goal, encuentra los dos primeros números del array que sumen el número goal y devuelve sus índices. Si no existe tal combinación, devuelve None.
 
-    nums = [4,6,6,2]
-    target = 8
+nums = [4, 5, 6, 2]
+goal = 8
+
+find_first_sum(nums, goal)  # [2, 3]
 """
+
 #bloque anidado de for esto se puede mejorar con un diccionario
 def find_sum(nums:int, target:int) -> list:
     if len(nums) == 0: return None
