@@ -38,3 +38,22 @@ resultado = battle(lista_a, lista_b)  # -> "x"
 # Fuerza bruta: buscar la solución A SACO.
 # Algoritmos ocultos o cálculos o fórmulas
 # Programación dinámica: buscar una solución mas eficiente
+
+
+
+lista_a = [2, 4, 2]
+lista_b = [3, 3, 4]
+
+
+print(lista_a[0] > lista_b[0])
+
+
+#la manera facil de hacerla es con condiccionales
+# pero son muchas lineas
+
+for a, b in zip(lista_a,lista_b):
+    if a > b:
+        print(a)
+    else:
+        b > a
+        print(b)
