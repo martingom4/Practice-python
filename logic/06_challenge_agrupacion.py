@@ -30,6 +30,7 @@ La función debería retornar:
 - Agrega el nombre correspondiente a la lista asociada a la edad.
 
 """
+from collections import defaultdict
 
 personas = {
     "Ana": 25,
@@ -41,16 +42,11 @@ personas = {
 }
 
 
-for key, value in personas.items():
-    dic = {} # diccionario vacio donde vamos agrupar las listas 
-     #lo que quiero es agrupar todo por value como asi? si value es 25 tengo que agrupar las personas que tienen 25 y asi
-    print(value)
-    print(f"key: {key} | value: {value}")
-
 def agrupacion(diccionario):
-    senn  = {}
-    for key, value in enumerate(personas):
-     #lo que quiero es agrupar todo por value como asi? si value es 25 tengo que agrupar las personas que tienen 25 y asi
-        print(f"key: {key} | value: {value}")
+    edades = defaultdict(list) #creo un diccionario vacio con listas
+    for nombre, edad in diccionario.items(): #se iteran los elementos del diccionario
+        edades[edad].append(nombre)#se agrega el nombre a la lista de edades
+    print(f"edad:\n{dict(edades)}")#se imprime el diccionario
 
 
+agrupacion(personas)
