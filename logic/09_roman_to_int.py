@@ -12,15 +12,25 @@ def roman_to_int(roman:str) -> int:
         'D':500,
         'M':1000
     }
-    int_value = 0
-    for i in range(len(roman)):
-        if i > 0 and roman_values[roman[i]] > roman_values[roman[i-1]]:
+    int_value = 0 # primer valor lo inicializamos en 0
+    for i in range(len(roman)): #leemos entre al diccionario de los valores de los numeros romanos
+        if i > 0 and roman_values[roman[i]] > roman_values[roman[i-1]]: #i-1??
             int_value += roman_values[roman[i]] - 2 * roman_values[roman[i-1]]
         else:
             int_value += roman_values[roman[i]]
     return int_value
 
-print(roman_to_int('III'))
-print(roman_to_int('IV'))
-print(roman_to_int('IX'))
-print(roman_to_int('LVIII'))  
+
+'''
+roman: es el valor que ingresa el usuario
+despues hacemos la condicion para saber si el valor de la letra actual es mayor que el valor de la letra anterior
+si es asi, restamos el valor de la letra actual menos el doble del valor de la letra anterior
+si no, sumamos el valor de la letra actual
+
+para verlo de manera mas grafica:
+    si el valor de la letra actual es mayor que el valor de la letra anterior
+    sumamos el valor de la letra actual menos el doble del valor de la letra anterior
+    si no
+    sumamos el valor de la letra actual
+
+'''
