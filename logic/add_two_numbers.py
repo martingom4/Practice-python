@@ -3,23 +3,21 @@ vale la logica es que tengo que sumar los dos strings. Como asi? tengo dos arreg
 '''
 
 
-list1 = [2,4,3]
-list2 = [2,6,3]
+l1 = [2, 4, 3]
+l2 = [2, 6, 3]
 
-rev1 = reversed(list1)
-rev2 = reversed(list2)
-
-reversed(list1) #
 carry = 0
 result = []
-for i in range(len(rev1)):
-    if rev1[i] + rev2[i] >= 10:
-        sum = rev1[i] + rev2[i] + carry
-        result[i] = carry % sum
-        carry = sum // 10 #1
-        print(result)
-        print(carry)
 
-    else:
-        rev1[i] = rev1[i] + rev2[i]
-        print(rev1)
+# Recorremos los índices de derecha a izquierda
+for i in range(len(l1) - 1, -1, -1):
+    total = l1[i] + l2[i] + carry
+    digit = total % 10      # Dígito que se queda en la posición actual
+    carry = total // 10     # Acarreo que se llevará a la siguiente suma
+    result.insert(0, digit) # Insertamos el dígito al inicio del resultado
+
+# Si al final todavía hay un acarreo, lo agregamos al inicio
+if carry:
+    result.insert(0, carry)
+
+print(result)  # Esto mostrará [4, 0, 6]
